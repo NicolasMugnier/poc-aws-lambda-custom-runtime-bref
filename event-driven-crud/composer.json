@@ -1,0 +1,14 @@
+{
+    "name": "nicolas.mugnier/poc-aws-lambda-custom-runtime-bref",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "bref/bref": "^1.7",
+        "symfony/dependency-injection": "^6.1",
+        "symfony/config": "^6.1",
+        "symfony/yaml": "^6.1"
+    }
+}

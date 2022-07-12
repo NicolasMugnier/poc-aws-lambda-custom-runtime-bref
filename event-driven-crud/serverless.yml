@@ -1,0 +1,46 @@
+service: app
+
+provider:
+    name: aws
+    region: eu-west-1
+    runtime: provided.al2
+
+plugins:
+    - ./vendor/bref/bref
+
+functions:
+    addBook:
+        handler: ./src/Events/create/index.php
+        description: ''
+        layers:
+            - ${bref:layer.php-81}
+    getBook:
+        handler: ./src/Events/read/index.php
+        description: ''
+        layers:
+            - ${bref:layer.php-81}
+
+    deleteBook:
+        handler: ./src/Events/delete/index.php
+        description: ''
+        layers:
+            - ${bref:layer.php-81}
+
+# Exclude files from deployment
+package:
+    patterns:
+        - '!tests/**'
+
+#resources:
+#  Resources:
+#    Books:
+#      Type: AWS::DynamoDB::Table
+#      Properties:
+#        TableName: 'books'
+#        AttributeDefinitions:
+#          - AttributeName: id
+#            AttributeType: S
+#        KeySchema:
+#          - AttributeName: id
+#            KeyType: HASH
+#        BillingMode: PAY_PER_REQUEST
