@@ -12,9 +12,9 @@
 
 ## POCs
 
-- [Symfony](./symfony/README.md)
-- [Laravel](./Laravel/README.md)
-- [event-driven CRUD](./event-driven-crud/README.md)
+- [Symfony](./symfony)
+- [Laravel](./Laravel)
+- [event-driven CRUD](./event-driven-crud)
 
 ## Resources
 
