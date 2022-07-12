@@ -1,0 +1,1 @@
+# Sample Symfony application
