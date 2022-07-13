@@ -21,6 +21,5 @@ $container->compile();
 return function ($event) use ($container) {
     /** @var RemoveBookResponse $response */
     $response = $container->get(App\BusinessRules\UseCases\RemoveBook\RemoveBook::class)->execute(RemoveBookRequest::create($event['id']));
-    http_response_code(204);
     return;
 };

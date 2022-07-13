@@ -21,6 +21,5 @@ $container->compile();
 return function ($event) use ($container) {
     /** @var AddBookResponse $response */
     $response = $container->get(App\BusinessRules\UseCases\AddBook\AddBook::class)->execute(AddBookRequest::create($event['title'], $event['author']));
-    http_response_code(201);
     return json_encode(['id' => $response->getBook()->getId()]);
 };
