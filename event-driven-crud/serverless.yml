@@ -7,7 +7,7 @@ provider:
 
 custom:
     bref:
-        separateVendor: false
+        separateVendor: true
 
 plugins:
     - serverless-iam-roles-per-function
@@ -19,6 +19,7 @@ functions:
         description: 'Add a new book'
         layers:
             - ${bref:layer.php-81}
+        iamRoleStatementsInherit: true
         iamRoleStatements:
             - Effect: 'Allow'
               Action:
@@ -31,6 +32,7 @@ functions:
         description: 'Get a specific book'
         layers:
             - ${bref:layer.php-81}
+        iamRoleStatementsInherit: true
         iamRoleStatements:
             - Effect: 'Allow'
               Action:
@@ -42,6 +44,7 @@ functions:
         description: 'Delete a book'
         layers:
             - ${bref:layer.php-81}
+        iamRoleStatementsInherit: true
         iamRoleStatements:
             - Effect: 'Allow'
               Action:
