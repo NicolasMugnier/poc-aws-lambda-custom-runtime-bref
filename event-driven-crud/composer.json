@@ -9,6 +9,7 @@
         "bref/bref": "^1.7",
         "symfony/dependency-injection": "^6.1",
         "symfony/config": "^6.1",
-        "symfony/yaml": "^6.1"
+        "symfony/yaml": "^6.1",
+        "aws/aws-sdk-php": "^3.231"
     }
 }

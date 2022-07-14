@@ -16,3 +16,10 @@ services:
 
   App\BusinessRules\UseCases\RemoveBook\RemoveBook:
     public: true
+
+  App\Factories\DynamoDbClientFactory: ~
+
+  Aws\DynamoDb\DynamoDbClient:
+    factory: ['@App\Factories\DynamoDbClientFactory', create]
+    arguments: ['eu-west-1']
+
