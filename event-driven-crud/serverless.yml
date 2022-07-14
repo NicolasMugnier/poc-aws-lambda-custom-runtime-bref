@@ -5,18 +5,18 @@ provider:
     region: eu-west-1
     runtime: provided.al2
 
-plugins:
-    - serverless-iam-roles-per-function
-    - ./vendor/bref/bref
-
 custom:
     bref:
         separateVendor: false
 
+plugins:
+    - serverless-iam-roles-per-function
+    - ./vendor/bref/bref
+
 functions:
     addBook:
         handler: ./src/Events/create/index.php
-        description: ''
+        description: 'Add a new book'
         layers:
             - ${bref:layer.php-81}
         iamRoleStatements:
@@ -28,7 +28,7 @@ functions:
 
     getBook:
         handler: ./src/Events/read/index.php
-        description: ''
+        description: 'Get a specific book'
         layers:
             - ${bref:layer.php-81}
         iamRoleStatements:
@@ -39,7 +39,7 @@ functions:
 
     deleteBook:
         handler: ./src/Events/delete/index.php
-        description: ''
+        description: 'Delete a book'
         layers:
             - ${bref:layer.php-81}
         iamRoleStatements:
